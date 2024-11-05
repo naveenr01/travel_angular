@@ -1,0 +1,54 @@
+/* Container styling for alignment */
+.error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Aligns items to the left */
+    justify-content: center;
+    min-height: 10vh;
+    padding-left: 50px; /* Add some space from the left edge */
+    background-color: #f8f9fa; /* Light background color */
+    color: #333;
+  }
+  
+  /* Heading (404 - Page Not Found) styling */
+  .error-container h1 {
+    font-size: 4rem;
+    color: #d9534f; /* Red color for error */
+    margin-bottom: 20px;
+    text-align: left; /* Aligns heading to the left */
+  }
+  
+  /* Paragraph (error message) styling */
+  .error-container p {
+    font-size: 1.5rem;
+    color: #d9534f; /* Red color to match the heading */
+    margin-bottom: 30px;
+    text-align: left;
+  }
+  
+  /* Button link styling */
+  .error-container a {
+    display: inline-block;
+    margin-right: 20px;
+    padding: 10px 20px;
+    background-color: #007bff; /* Blue background for the button */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  
+  .error-container a.btn-secondary {
+    background-color: #6c757d; /* Secondary button color */
+  }
+  
+  .error-container a:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  .error-container a.btn-secondary:hover {
+    background-color: #5a6268; /* Darker gray on hover */
+  }
+  

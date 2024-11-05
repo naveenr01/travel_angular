@@ -1,0 +1,25 @@
+<div class="city-detail-container">
+    <h2>City Details - ID: {{ cityId }}</h2>
+  
+    <form [formGroup]="cityForm" (ngSubmit)="saveChanges()">
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input id="description" formControlName="description" />
+      </div>
+  
+      <div class="form-group">
+        <label for="placesToSee">Places to See</label>
+        <input id="placesToSee" formControlName="placesToSee" />
+      </div>
+  
+      <div class="form-group">
+        <label for="rating">Rating</label>
+        <input id="rating" type="number" formControlName="rating" />
+      </div>
+  
+      <button type="submit">Save Changes</button>
+      <button type="button" (click)="deleteCity()">Delete City</button>
+      <button type="button" (click)="goBack()">Back to Cities</button>
+    </form>
+  </div>
+  

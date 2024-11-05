@@ -1,0 +1,87 @@
+<div class="container">
+  <ng-container *ngIf="!showDetailView">
+    <h2>Explore Cities by Category</h2>
+
+    <div *ngFor="let category of categories" class="category-section">
+      <h3>{{ category }}</h3>
+      <div class="city-grid">
+        <div class="city-card" *ngFor="let city of filterByCategory(category)">
+          <img [src]="city.image" alt="{{ city.name }}" class="city-image" />
+          <div class="city-info">
+            <h4>{{ city.name }}</h4>
+            <p>{{ city.description }}</p>
+            <p><strong>Rating:</strong> {{ city.rating }} ★</p>
+            <p><strong>Places to See:</strong> {{ city.placesToSee.join(', ') }}</p>
+            <button class="edit-btn" (click)="editCity(city)">Edit</button>
+            <button class="delete-btn" (click)="deleteCity()">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Form to add a new city -->
+    <div class="add-city-form">
+      <h3>Add a New City</h3>
+      <form [formGroup]="addCityForm" (ngSubmit)="addCity()">
+        <div class="form-group">
+          <label for="name">City Name</label>
+          <input id="name" formControlName="name" placeholder="Enter city name" />
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <input id="description" formControlName="description" placeholder="Enter description" />
+        </div>
+        <div class="form-group">
+          <label for="placesToSee">Places to See</label>
+          <input id="placesToSee" formControlName="placesToSee" placeholder="Enter places to see, separated by commas" />
+        </div>
+        <div class="form-group">
+          <label for="rating">Rating</label>
+          <input id="rating" type="number" formControlName="rating" placeholder="Enter rating (0-5)" />
+        </div>
+        <div class="form-group">
+          <label for="category">Category</label>
+          <select id="category" formControlName="category">
+            <option *ngFor="let cat of categories" [value]="cat">{{ cat }}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="image">Image URL</label>
+          <input id="image" formControlName="image" placeholder="Enter image URL" />
+        </div>
+        <button type="submit" class="add-btn">Add City</button>
+      </form>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="showDetailView">
+    <div class="city-detail-container">
+      <h2>City Details - ID: {{ selectedCity?.id }}</h2>
+      <form [formGroup]="cityForm" (ngSubmit)="saveChanges()">
+        <div class="form-group">
+          <label for="name">City Name</label>
+          <input id="name" formControlName="name" />
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <input id="description" formControlName="description" />
+        </div>
+        <div class="form-group">
+          <label for="placesToSee">Places to See</label>
+          <input id="placesToSee" formControlName="placesToSee" />
+        </div>
+        <div class="form-group">
+          <label for="rating">Rating</label>
+          <input id="rating" type="number" formControlName="rating" />
+        </div>
+        <div class="form-group">
+          <label for="category">Category</label>
+          <input id="category" formControlName="category" />
+        </div>
+        <button type="submit" class="save-btn">Save Changes</button>
+        <button type="button" (click)="deleteCity()" class="delete-btn">Delete</button>
+        <button type="button" (click)="goBack()" class="back-btn">Back to Cities</button>
+      </form>
+    </div>
+  </ng-container>
+</div>
