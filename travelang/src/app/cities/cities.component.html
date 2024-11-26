@@ -1,6 +1,7 @@
 <div class="container">
   <ng-container *ngIf="!showDetailView">
-    <h2>Explore Cities by Category</h2>
+    <h2 style="color: white;">Explore Cities by Category</h2>
+
 
     <div *ngFor="let category of categories" class="category-section">
       <h3>{{ category }}</h3>
@@ -12,8 +13,11 @@
             <p>{{ city.description }}</p>
             <p><strong>Rating:</strong> {{ city.rating }} ★</p>
             <p><strong>Places to See:</strong> {{ city.placesToSee.join(', ') }}</p>
+            <p><strong>Package:</strong> ₹{{ city.packageCost }}</p>
+            <p><strong>Trip Duration:</strong> {{ city.tripDays }} days</p>
             <button class="edit-btn" (click)="editCity(city)">Edit</button>
             <button class="delete-btn" (click)="deleteCity()">Delete</button>
+            <button class="book-btn" (click)="bookCity(city)">Book</button>
           </div>
         </div>
       </div>
@@ -44,6 +48,14 @@
           <select id="category" formControlName="category">
             <option *ngFor="let cat of categories" [value]="cat">{{ cat }}</option>
           </select>
+        </div>
+        <div class="form-group">
+          <label for="packageCost">Package Cost (₹)</label>
+          <input id="packageCost" type="number" formControlName="packageCost" placeholder="Enter cost in ₹" />
+        </div>
+        <div class="form-group">
+          <label for="tripDays">Trip Duration (days)</label>
+          <input id="tripDays" type="number" formControlName="tripDays" placeholder="Enter number of days" />
         </div>
         <div class="form-group">
           <label for="image">Image URL</label>
@@ -77,6 +89,14 @@
         <div class="form-group">
           <label for="category">Category</label>
           <input id="category" formControlName="category" />
+        </div>
+        <div class="form-group">
+          <label for="packageCost">Package Cost (₹)</label>
+          <input id="packageCost" type="number" formControlName="packageCost" />
+        </div>
+        <div class="form-group">
+          <label for="tripDays">Trip Duration (days)</label>
+          <input id="tripDays" type="number" formControlName="tripDays" />
         </div>
         <button type="submit" class="save-btn">Save Changes</button>
         <button type="button" (click)="deleteCity()" class="delete-btn">Delete</button>
