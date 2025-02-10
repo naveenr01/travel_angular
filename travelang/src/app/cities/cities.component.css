@@ -1,115 +1,136 @@
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-image: url('https://www.desktopbackground.org/download/2048x1152/2013/05/20/578886_most-beautiful-travel-destinations-4k-or-hd-wallpapers-for-your-pc_2048x1366_h.jpg');
+  background-size: cover; /* Ensures the image covers the entire background */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-attachment: fixed; /* Keeps the background image fixed while content scrolls */
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+/* Add a container for scrolling content */
 .container {
-    width: 80%;
-    margin: auto;
-    font-family: Arial, sans-serif;
-  }
-  
-  h2 {
-    text-align: center;
-    color: #333;
-  }
-  
-  .category-section {
-    margin-top: 30px;
-    color: white;
-  }
-  
-  .city-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-  
-  .city-card {
-    background-color: #ffffff; /* Solid white background */
-    border: 1px solid #ddd;
-    padding: 15px;
-    border-radius: 8px;
-    width: 30%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  
-  .city-image {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-  }
-  
-  .city-info h4 {
-    color: #007bff; /* Changed to a bright blue for visibility */
-    margin: 0;
-  }
-  
-  .city-info p {
-    color: #555; /* Adjusted to a lighter shade for readability */
-    margin: 5px 0;
-  }
-  
-  button {
-    padding: 8px 12px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .edit-btn {
-    background-color: #007bff;
-    color: #fff;
-  }
-  
-  .book-btn {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    margin-left: 5px;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .book-btn:hover {
-    background-color: #218838;
-  }
-  
-  .delete-btn {
-    background-color: #dc3545;
-    color: #fff;
-    margin-left: 10px;
-  }
-  
-  .add-city-form {
-    background: #f9f9f9;
-    padding: 20px;
-    border-radius: 8px;
-    margin-top: 30px;
-  }
-  
-  .add-btn {
-    background-color: #28a745;
-    color: #fff;
-    margin-top: 10px;
-  }
-  
-  .city-detail-container {
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  .save-btn {
-    background-color: #17a2b8;
-    color: #fff;
-  }
-  
-  .back-btn {
-    background-color: #6c757d;
-    color: #fff;
-    margin-left: 10px;
-  }
-  
-  button:hover {
-    opacity: 0.9;
-  }
-  
+  width: 100%;
+  margin: auto;
+  font-family: Arial, sans-serif;
+  height: 100vh; /* Full viewport height */
+  overflow-y: auto; /* Allows the container to scroll */
+  padding: 20px; /* Optional: Add some padding */
+  scrollbar-width: none; /* For Firefox */
+}
+
+.container::-webkit-scrollbar {
+  display: none; /* Hides the scrollbar */
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+}
+
+.category-section {
+  margin-top: 30px;
+  color: white;
+}
+
+.city-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.city-card {
+  background-color: #ffffff; /* Solid white background */
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+  width: 30%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.city-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.city-info h4 {
+  color: #007bff; /* Changed to a bright blue for visibility */
+  margin: 0;
+}
+
+.city-info p {
+  color: #555; /* Adjusted to a lighter shade for readability */
+  margin: 5px 0;
+}
+
+button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.edit-btn {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.book-btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  margin-left: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.book-btn:hover {
+  background-color: #218838;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  color: #fff;
+  margin-left: 10px;
+}
+
+.add-city-form {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 30px;
+}
+
+.add-btn {
+  background-color: #28a745;
+  color: #fff;
+  margin-top: 10px;
+}
+
+.city-detail-container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.save-btn {
+  background-color: #17a2b8;
+  color: #fff;
+}
+
+.back-btn {
+  background-color: #6c757d;
+  color: #fff;
+  margin-left: 10px;
+}
+
+button:hover {
+  opacity: 0.9;
+}

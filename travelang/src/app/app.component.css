@@ -1,12 +1,64 @@
-
 .example-spacer {
     flex: 1 1 auto;
-    
   }
   
-button{
+  button {
     margin: 3%;
+  }
+  
+  mat-toolbar {
+    background-color: #007bff; /* A deep blue for a classic look */
+    padding: 10px 20px; /* Increased padding for a more spacious feel */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
+  }
+  
+  /* Navbar link styles */
+ /* Nav link default styles */
+.nav-link {
+  color: #f8f9fa; /* Light color for text */
+  padding: 12px 20px; /* Adequate padding for a comfortable click area */
+  margin: 0 10px; /* Horizontal margin for spacing between links */
+  border-radius: 5px; /* Rounded corners for links */
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease-in-out; /* Smooth transition for hover */
+  font-weight: 500; /* Slightly bolder text */
+  font-family: 'Arial', sans-serif; /* A clean, modern font */
 }
-mat-toolbar{
-    background-color: aquamarine;
+
+/* Enhanced Hover Effect */
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Subtle white background on hover */
+  color: #ffcc00; /* Change text color on hover to a golden shade */
+  transform: scale(1.05); /* Slight zoom-in effect on hover */
+}
+
+/* Active link styling */
+.nav-link.active {
+  font-weight: 600; /* Make active link bolder */
+  color: #ffffff; /* Text color for active link */
+  background-color: #0056b3; /* Dark blue background for active link */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  .nav-link {
+      padding: 10px 15px; /* Adjust padding for smaller screens */
+      margin: 0 5px; /* Adjust margins for smaller screens */
+  }
+}
+
+  
+  .travel-logo {
+    font-size: 28px; /* Increase font size for a bold look */
+    font-weight: bold; /* Make it stand out */
+    text-transform: uppercase; /* Give a premium feel */
+    letter-spacing: 2px; /* Add spacing for elegance */
+    color: #4b07c9; /* White color for contrast */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
+    font-family: 'Poppins', sans-serif; /* Modern font */
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out; /* Smooth effects */
+}
+
+.travel-logo:hover {
+    color: #c60505; /* Change color on hover */
+    transform: scale(1.1); /* Slight zoom effect */
 }

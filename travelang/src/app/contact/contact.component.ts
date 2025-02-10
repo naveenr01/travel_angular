@@ -29,6 +29,7 @@ export class ContactComponent {
 
   onSubmit() {
     if (this.contactForm.valid) {
+      alert('message sent successfully!');
       console.log('Contact Form Submitted', this.contactForm.value);
     }
   }
